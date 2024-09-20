@@ -1,0 +1,111 @@
+@font-face {
+    font-family: IranYekan;
+    src: url(./fonts/IRANYekanWeb.eot);
+    src: url(./fonts/IRANYekanWeb.woff);
+    src: url(./fonts/IRANYekanWeb.woff2);
+    src: url(./fonts/IRANYekanWeb.ttf);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: IranYekan;
+    color: #fff;
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000da;
+
+}
+.container{
+    background-color: #595959b5;
+    border-radius: 15px;
+    padding: 2rem 7rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.user-result>img{
+    width: 100px;
+    height: 160px;
+}
+.cpu-result>img{
+    width: 100px;
+    height: 160px;
+}
+.container.start .user-result>img{
+    animation: userShake 0.8s ease infinite;
+}
+@keyframes userShake{
+    50%{
+        transform: rotate(110deg) rotateY(180deg);
+    }
+}
+.container.start .cpu-result>img{
+    animation: cpuShake 0.8s ease infinite;
+}
+@keyframes cpuShake{
+    50%{
+        transform: rotate(-110deg);
+    }
+}
+.result-images{
+    display: flex;
+    column-gap: 5rem;
+}
+.result-images img{
+    width: 100px;
+}
+.user-result img{
+    transform: rotate(90deg) rotateY(180deg);
+}
+.cpu-result img{
+    transform: rotate(-90deg);
+}
+.result{
+    text-align: center;
+    direction: rtl;
+    font-size: 30px;
+
+}
+
+.option-images{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+.container.start .option-images{
+    pointer-events: none;
+}
+.option-image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+.option-image img{
+    width: 50px;
+    pointer-events: none;
+}
+.option-image:hover{
+    opacity: 1;
+}
+.option-image.active{
+    opacity: 1;
+}
+.option-image p{
+    font-size: 20px;
+    margin-top: 15px;
+    pointer-events: none;
+}
+.green-text {
+    color: rgb(0, 255, 0);
+}
+
+.red-text {
+    color: rgb(255, 0, 0);
+}
